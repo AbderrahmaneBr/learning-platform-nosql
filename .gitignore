@@ -1,3 +1,4 @@
 # Compléter ici !!!!???
-
+.env
+.env*.local
 node_modules
