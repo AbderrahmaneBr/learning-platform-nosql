@@ -11,26 +11,60 @@
 
 const { ObjectId } = require("mongodb");
 const db = require("../config/db");
-const { findOneById, insertOne } = require("../services/mongoService");
-const mongoService = require("../services/mongoService");
-const redisService = require("../services/redisService");
+const {
+  findOneById,
+  insertOne,
+  countDocuments,
+} = require("../services/mongoService");
+const { getCacheData, cacheData } = require("../services/redisService");
 
 async function createCourse(req, res) {
-  // Implémenter la création d'un cours
-  // const results = await findOneById("courses", "678582b00dfa90184437b1c5");
-  // console.log(results);
-  // insertOne("courses", {
-  //   title: "New course",
-  //   rating: 9,
-  //   price: 59.99,
-  // });
+  try {
+    const courseData = req.body;
+    const insertedData = await insertOne("courses", courseData);
+    res.status(201).json({
+      status: "Data inserted successfully",
+      data: insertedData,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Error creating course", error: error.message });
+  }
 }
 
-createCourse();
+async function getCourse(req, res) {
+  try {
+    const courseId = req.params.id;
+    const results = await findOneById("courses", courseId);
 
-async function getCourse(req, res) {}
+    res.status(200).json(results);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Error fetching course data", error: error.message });
+  }
+}
 
-async function getCourseStats(req, res) {}
+async function getCourseStats(req, res) {
+  try {
+    const cachedStats = await getCacheData("coursesCount");
+
+    if (cachedStats) {
+      return res.status(200).json({ coursesCount: cachedStats });
+    }
+
+    const coursesCount = await countDocuments("courses");
+
+    await cacheData("coursesCount", coursesCount);
+
+    res.status(200).json({ coursesCount: coursesCount });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Error fetching courses stats", error: error.message });
+  }
+}
 
 // Export des contrôleurs
 module.exports = {

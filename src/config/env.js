@@ -6,13 +6,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const requiredEnvVars = [
-  "MONGODB_URI",
-  "MONGODB_DB_NAME",
-  "REDIS_HOST",
-  "REDIS_PORT",
-  "REDIS_PW",
-];
+const requiredEnvVars = ["MONGODB_URI", "REDIS_HOST", "REDIS_PORT", "REDIS_PW"];
 
 // Validation des variables d'environnement
 function validateEnv() {
@@ -27,7 +21,6 @@ module.exports = {
   validateEnv,
   mongodb: {
     uri: process.env.MONGODB_URI,
-    dbName: process.env.MONGODB_DB_NAME,
   },
   redis: {
     host: process.env.REDIS_HOST,
