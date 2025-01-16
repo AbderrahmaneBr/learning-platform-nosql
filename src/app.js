@@ -1,5 +1,12 @@
 // Question: Comment organiser le point d'entrée de l'application ?
+// Réponse: Le point d'entrée doit initialiser les ressources nécessaires,
+// diriger vers les modules appropriés, et inclure une gestion globale des erreurs
+// pour une application claire et maintenable.
+
 // Question: Quelle est la meilleure façon de gérer le démarrage de l'application ?
+// Réponse: La meilleure façon de gérer le démarrage est d'initialiser les ressources,
+// diriger vers le contrôleur principal et gérer les erreurs globalement, idéalement avec
+// un framework d'injection de dépendances.
 
 const express = require("express");
 const config = require("./config/env");

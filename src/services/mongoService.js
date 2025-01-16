@@ -34,7 +34,7 @@ async function insertOne(collection, data) {
     .getMongoClient()
     .db("db_platform")
     .collection(collection)
-    .insertOne(JSON.stringify(data));
+    .insertOne(data);
 
   return results;
 }
