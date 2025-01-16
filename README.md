@@ -59,12 +59,12 @@ Nous avons utilisé Node.js avec Express car Node.js permet un traitement asynch
 ## Annexes
 
 Structure de la base de données
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 Voici la structure de notre base de données. La BD "db_platform" contient deux collections "courses" et "students", chaque collection contient les documents convenables.
 
 Utilisation de Redis pour faire le caching des valeurs "Stats" où on compte le nombre des cours et le nombre des étudiants
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 
 Pour tester notre API on utilise Postman.
 Postman est un outil de développement utilisé pour tester et interagir avec des API. Il permet d'envoyer des requêtes HTTP (GET, POST, PUT, DELETE, etc.) vers des serveurs, d'inspecter les réponses, de gérer des environnements et de créer des collections de tests automatisés. Postman est largement utilisé pour le débogage d'API, la documentation et la collaboration entre les équipes de développement.
@@ -73,23 +73,23 @@ Postman est un outil de développement utilisé pour tester et interagir avec de
 
 ### Les Cours
 
-Ajouter un cours
-![alt text](image-2.png)
-![alt text](image-3.png)
+Ajouter un cours<br>
+![alt text](./screenshots/image-2.png)
+![alt text](./screenshots/image-3.png)
 
-Afficher un cours
-![alt text](image-4.png)
+Afficher un cours<br>
+![alt text](./screenshots/image-4.png)
 
-Afficher les statistiques des cours
-![alt text](image-5.png)
+Afficher les statistiques des cours<br>
+![alt text](./screenshots/image-5.png)
 
 ### Les Étudiants
 
-Ajouter un étudiant
-![alt text](image-6.png)
+Ajouter un étudiant<br>
+![alt text](./screenshots/image-6.png)
 
-Afficher un étudiant
-![alt text](image-7.png)
+Afficher un étudiant<br>
+![alt text](./screenshots/image-7.png)
 
-Afficher les statistiques des étudiants
-![alt text](image-8.png)
+Afficher les statistiques des étudiants<br>
+![alt text](./screenshots/image-8.png)
