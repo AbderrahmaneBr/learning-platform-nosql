@@ -58,12 +58,12 @@ Nous avons utilisé Node.js avec Express car Node.js permet un traitement asynch
 
 ## Annexes
 
-Structure de la base de données
+Structure de la base de données<br>
 ![alt text](screenshots/image.png)
 
 Voici la structure de notre base de données. La BD "db_platform" contient deux collections "courses" et "students", chaque collection contient les documents convenables.
 
-Utilisation de Redis pour faire le caching des valeurs "Stats" où on compte le nombre des cours et le nombre des étudiants
+Utilisation de Redis pour faire le caching des valeurs "Stats" où on compte le nombre des cours et le nombre des étudiants<br>
 ![alt text](screenshots/image-1.png)
 
 Pour tester notre API on utilise Postman.
